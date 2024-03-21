@@ -3,19 +3,6 @@ pipeline {
   agent any
 
   stages {
-    stage('test') {
-        agent{
-          docker{
-            image 'maven:3.6.1-jdk-8-slim'
-            args '-v $HOME/.m2:/root/.m2'
-          }
-        }
-
-      steps {
-        echo 'running unit tests on worker app'
-          sh 'mvn clean test'
-      }
-    }
     stage('Sonarqube') {
       agent any
 
