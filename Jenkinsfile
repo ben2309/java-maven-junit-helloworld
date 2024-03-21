@@ -46,8 +46,6 @@ pipeline {
         }
     }
     }
-
-  }
   post {
     always {
       echo 'the job is complete'
